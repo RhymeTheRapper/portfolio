@@ -1,0 +1,132 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 300px;
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+
+.header {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.profileImage {
+  flex: 1;
+  max-height: 300px;
+  border-radius: 16px;
+  border: 5px solid var(--primary-color);
+  object-fit: cover;
+}
+
+.divider {
+  height: 5px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  margin-bottom: 24px;
+  border-radius: 999px;
+}
+
+.title {
+  display: flex;
+  align-items: flex-end;
+}
+
+.squiggle {
+  width: 100%;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 12.5 0, 25 10 T 50 10 T 75 10 T 100 10' stroke='%23F71735' stroke-width='3' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 100px 20px;
+  animation: squiggleMove 3s linear infinite;
+  margin-bottom: 24px;
+}
+
+@keyframes squiggleMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 0;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  min-height: 300px;
+  transition: all 0.5s ease;
+  background: var(--secondary-color);
+
+  &:hover {
+    border-color: var(--contrast-color);
+    transform: scale(1.02);
+  }
+}
+
+.footer {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.contactLink {
+  color: var(--contrast-color);
+  font-size: 1.7rem;
+  font-weight: 600;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 32px 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .profileImage {
+    border-radius: 50%;
+    max-height: 150px;
+    max-width: 150px;
+  }
+
+  .contactLink {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,51 @@
+.container {
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--primary-color);
+  border-radius: 16px;
+  flex: 3;
+}
+
+.text {
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  white-space: normal;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.15em;
+  background-color: var(--contrast-color);
+  border-radius: 0.075em;
+  margin-left: 0.1em;
+  vertical-align: baseline;
+  animation: none;
+  
+  &.blink {
+    animation: blink 1s step-end infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+}
