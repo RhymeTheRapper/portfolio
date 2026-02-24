@@ -22,7 +22,18 @@ export default function MobileFlow({ onClose }: MobileFlowProps) {
             </h2>
             <h3 className={styles.subtitle}>Proof - UX Engineer</h3>
           </div>
-          <div className={styles.grid}>
+        </div>
+        <div className={styles.imageSection}>
+          <div className={styles.imageWrapper}>
+            <img
+              src="/projects/mobileFlow/personalInfo.png"
+              alt="Onboarding Flow Responsive Redesign Screenshot"
+              className={styles.image}
+            />
+          </div>
+        </div>
+      </div>
+      {/* <div className={styles.grid}>
             <div className={styles.textSection}>
               <p className={styles.paragraph}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
@@ -72,9 +83,10 @@ export default function MobileFlow({ onClose }: MobileFlowProps) {
                 />
               </div>
             </div>
-          </div>
+          </div> 
         </div>
-      </div>
+      </div >
+        */}
     </div>
   );
 }

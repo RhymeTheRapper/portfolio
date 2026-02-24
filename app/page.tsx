@@ -5,7 +5,7 @@ import TypingAnimation from "./common/typing-animation";
 import styles from "./page.module.scss";
 import Image from "next/image";
 import MobileFlow from "./project_modal/mobile_flow";
-import Certify from "./project_modal/certify";
+import NotaryHome from "./project_modal/notary_home";
 
 export default function Home() {
   const [openModal, setOpenModal] = useState<string | null>(null);
@@ -79,9 +79,9 @@ export default function Home() {
               className={styles.cardImage}
             />
           </div>
-          <div className={styles.card} onClick={() => setOpenModal("certify")}>
+          <div className={styles.card} onClick={() => setOpenModal("notaryHome")}>
             <Image
-              src="/projects/mobileFlow/MacBook-Pro-16.jpg"
+              src="/projects/notaryHome/Home.jpg"
               alt="certify product image"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -93,8 +93,8 @@ export default function Home() {
         {openModal === "mobileFlow" && (
           <MobileFlow onClose={() => setOpenModal(null)} />
         )}
-        {openModal === "certify" && (
-          <Certify onClose={() => setOpenModal(null)} />
+        {openModal === "notaryHome" && (
+          <NotaryHome onClose={() => setOpenModal(null)} />
         )}
         <div className={styles.footer}>
           <h2>Get in Contact</h2>
