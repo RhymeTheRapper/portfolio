@@ -81,7 +81,7 @@ export default function Home() {
           </div>
           <div className={styles.card} onClick={() => setOpenModal("notaryHome")}>
             <Image
-              src="/projects/notaryHome/Home.jpg"
+              src="/projects/notaryHome/home.jpg"
               alt="certify product image"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
