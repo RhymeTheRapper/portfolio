@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import TypingAnimation from "./common/typing-animation";
+import Squiggle from "./common/squiggle";
 import styles from "./page.module.scss";
 import Image from "next/image";
 import MobileFlow from "./project_modal/mobile_flow";
@@ -12,20 +13,19 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   useEffect(() => {
     if (openModal) {
       document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+      return () => {
+        document.body.style.overflow = 'unset';
+      };
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [openModal]);
 
   if (isLoading) {
@@ -65,7 +65,7 @@ export default function Home() {
           </p>
         </div>
         <h2>Work</h2>
-        <div className={styles.squiggle} />
+        <Squiggle />
         <div className={styles.grid}>
           <div
             className={styles.card}
